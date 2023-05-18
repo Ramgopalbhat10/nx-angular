@@ -1,7 +1,12 @@
 <ng-container *ngrxLet="vm$ as vm">
   <a [routerLink]="['/']" routerLinkActive="active">Home</a>
   <div class="login-app">
-    <form [formGroup]="loginForm" class="login-form" *ngIf="!vm.loginState?.isLoggedIn" (ngSubmit)="login()">
+    <form
+      [formGroup]="loginForm"
+      class="login-form"
+      *ngIf="!vm.loginState?.isLoggedIn"
+      (ngSubmit)="login()"
+    >
       <label>
         Username:
         <input type="text" name="username" formControlName="username" />
@@ -10,6 +15,7 @@
         Password:
         <input type="password" name="password" formControlName="password" />
       </label>
+      <p *ngIf="vm.error">{{ vm.error }}</p>
       <button type="submit">Login</button>
     </form>
     <div *ngIf="vm.loginState?.isLoggedIn">
