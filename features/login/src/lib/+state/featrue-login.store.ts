@@ -44,6 +44,7 @@ export const loginReducers = createReducer(
   on(LoginActionsGroup.loginInit, (state) => ({ ...state, isLoading: true })),
   on(LoginActionsGroup.loginSuccessful, (state, { loginState }) => ({
     ...state,
+    isLoading: false,
     loginState,
   })),
   on(LoginActionsGroup.loginFailure, (state, { error }) => ({

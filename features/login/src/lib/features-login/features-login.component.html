@@ -18,8 +18,11 @@
       <p *ngIf="vm.error">{{ vm.error }}</p>
       <button type="submit">Login</button>
     </form>
+    <div *ngIf="vm.isLoading">
+      <p>logging in...</p>
+    </div>
     <div *ngIf="vm.loginState?.isLoggedIn">
-      <p>User is logged in - {{ vm.loginState?.jwt }}</p>
+      <p>User is logged in - {{ vm.loginState?.jwt }}. Navigating to home page</p>
     </div>
   </div>
 </ng-container>
