@@ -1,7 +1,7 @@
 import { Route } from '@angular/router';
 import { FeaturesLoginComponent } from './features-login/features-login.component';
 
-export const featuresLoginRoutes: Route[] = [
+export const FeaturesLoginRoutes: Route[] = [
   {
     path: '',
     component: FeaturesLoginComponent,
